@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} ACTUALIZACION DE USUARIO {% endblock titulo %}
+
+{% block contenido %}
+
+<h1 style="margin-top: 5rem; margin-left: 5rem;">Cambiar Contraseña</h1>
+<button style="margin-left: 5rem;" onclick="location.href='{% url 'users_app:user_panel' %}'">Regresar</button>
+<div style="margin-left: 5rem;">
+    <h3 style="margin-bottom: 20px;">Bienvenido: {{user}}</h3>
+    <img  class="img-edit img-fluid rounded-circle mb-3" src= "{% static 'img/ManuelCoder.jpg' %}" width="90" height="90">
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    
+</div>
+
+{% endblock contenido %}
